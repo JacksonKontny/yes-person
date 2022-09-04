@@ -45,10 +45,13 @@ class PullRequest():
     @property
     def repo_name(self):
         return self.head['repo']['name']
+    @property
+    def owner_name(self):
+        return self.head['repo']['owner']['login']
 
     @cached_property
     def review_comments(self):
-        return get_reviews(self.repo_name, self.pr_number)
+        return get_reviews(self.repo_name, self.pr_number, owner=self.owner_name)
 
 
 class ReviewComment():
