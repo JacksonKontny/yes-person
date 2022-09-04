@@ -17,7 +17,7 @@ def run():
         prs_to_approve = [
             pr
             for pr in open_prs
-            if should_approve_pull(pr, APPROVAL_USERS, APPROVALS_REQUIRED)
+            if should_approve_pull(pr, APPROVAL_USERS, APPROVALS_REQUIRED, TITLE_REGEX)
         ]
         if len(prs_to_approve) == 0:
             print("No PRs to approve...")
