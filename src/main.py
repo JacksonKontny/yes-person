@@ -24,7 +24,7 @@ def run():
         for pr in prs_to_approve:
             print(f'APPROVING PR: "{pr.title}" for user: "{pr.username}"')
             submit_pr_review(pr, owner=REPO_OWNER)
-            print(f"APPROVED PR: {pr.title} for user: {pr.username}")
+            print(f'APPROVED PR: "{pr.title}" for user: "{pr.username}"')
         time.sleep(INTERVAL_IN_SECONDS)
 
 

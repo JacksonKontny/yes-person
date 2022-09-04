@@ -119,9 +119,9 @@ def get_headers():
     }
 
 
-def submit_pr_review(pr: PullRequest, body="LGTM", event=APPROVE, owner="github"):
+def submit_pr_review(pr: PullRequest, body="LGTM", event=APPROVE):
     return requests.post(
-        f"{BASE}/repos/{owner}/{pr.repo_name}/pulls/{pr.pr_number}/reviews",
+        f"{BASE}/repos/{pr.owner_name}/{pr.repo_name}/pulls/{pr.pr_number}/reviews",
         headers=get_headers(),
         json={"commit_id": pr.commit_hash, "body": body, "event": event},
     ).json()
