@@ -16,4 +16,4 @@ Create github token with `project` access and repo read access
 Update `.env` file with github token and other configurations
 
 Run
-`PYTHONPATH=./:$PYTHONPATH pipenv run python src/main.py`
+`make run`
